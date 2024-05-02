@@ -1,13 +1,14 @@
 // Input Component
 import React from "react";
 
-const Input = () => {
+const Input = ({changeHandler}) => {
+
   return <>
     <div className="input-box">
       <span className="label">
         Location
       </span>
-      <input type="text"/>
+      <input type="text" />
     </div>
   </>;
 };
