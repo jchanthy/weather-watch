@@ -1,16 +1,22 @@
 // Input Component
 import React from "react";
+import PropTypes from "prop-types";
 
-const Input = ({changeHandler}) => {
+const Input = ({label, onInput, inputRef}) => {
 
-  return <>
+  return (
     <div className="input-box">
       <span className="label">
-        Location
+       {label}
       </span>
-      <input type="text" />
+      <input type="text" onChange={onInput} ref={inputRef} />
     </div>
-  </>;
+  )
 };
 
+Input.prototype = {
+  label: PropTypes.string.isRequired,
+  onSet: PropTypes.func,
+  inputRef: PropTypes.object
+}
 export default Input;

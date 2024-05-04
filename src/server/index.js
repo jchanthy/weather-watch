@@ -39,7 +39,7 @@ export function weatherServer({ environment = "development" } = {}) {
   return new Server({
     environment,
     routes() {
-      this.urlPrefix = "https://api.weatherserver.com";
+      this.urlPrefix = "https://api.weatherserver.com/";
       this.namespace = "weather";
 
       this.get("/current/:cityId/:tempUnits", (_, request) => {
@@ -51,7 +51,8 @@ export function weatherServer({ environment = "development" } = {}) {
         return getMap;
       });
 
-      this.get("/cities", () => {
+
+        this.get("/cities", () => {
         return {
           results: []
         };

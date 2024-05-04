@@ -1,16 +1,21 @@
 // SetUnits Component
 import React from "react";
+import PropTypes from "prop-types";
 
-const SetUnits = () => {
+const SetUnits = ({value, onSet}) => {
   return <>
     <div className="set-units">
-      <label className="label">Unites</label>
-      <select>
-        <option>Unites</option>
-        <option>Unites</option>
-      </select>
+      <label>UNITE</label>
+        <select value={value} onChange={onSet}>
+          <option value="C">Celsius</option>
+          <option value="F">Fahrenheit</option>
+        </select>
     </div>
   </>;
 };
 
+SetUnits.propTypes = {
+  value: PropTypes.number.isRequired,
+  onSet: PropTypes.func.isRequired
+}
 export default SetUnits;
